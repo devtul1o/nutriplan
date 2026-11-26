@@ -1,0 +1,19 @@
+# /etc/systemd/system/nutriplan.service
+[Unit]
+Description=NutriPlan API
+After=network.target
+
+[Service]
+User=nutriplan
+WorkingDirectory=/opt/nutriplan
+EnvironmentFile=/etc/nutriplan.env
+ExecStart=/opt/nutriplan/nutriplan
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/nutriplan
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+# /etc/caddy/Caddyfile  (troque pelo seu subdomínio)
+seu-subdominio.duckdns.org {
+	encode gzip
+	reverse_proxy 127.0.0.1:8080
+}
